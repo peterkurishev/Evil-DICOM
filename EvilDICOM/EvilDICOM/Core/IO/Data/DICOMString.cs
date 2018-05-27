@@ -14,7 +14,8 @@ namespace EvilDICOM.Core.IO.Data
     {
         public static string Read(byte[] data, StringEncoding enc)
         {
-            return EncodingDictionary.GetEncodingFromISO(enc).GetString(data).TrimEnd('\0').TrimEnd(' ');
+//            return EncodingDictionary.GetEncodingFromISO(enc).GetString(data).TrimEnd('\0').TrimEnd(' ');
+            return System.Text.Encoding.Default.GetString(data).TrimEnd('\0').TrimEnd(' ');
         }
 
         public static byte[] Write(string data, StringEncoding enc)
